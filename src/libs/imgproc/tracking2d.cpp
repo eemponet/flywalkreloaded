@@ -138,10 +138,15 @@ cv::Mat clsTracking2D::getProcessedImage()
         if(isVideo)
                 usleep(VIDEOFRAME_SLEEP);
         
-        if(!initializedProcess || resolutionChanged()){
+        if(!initializedProcess){
                 initializeProcessing();
         }
         
+        if(resolutionChanged()){
+        	WARNMSG(("Lost camera frame... wrong resolution."));
+        	usleep(500);
+        	return rawImage; // returns the previous frame... very dangerous in real-time systems.!
+        }
         cv::Rect roi( cameraResolutions["roiX"], cameraResolutions["roiY"], cameraResolutions["roiW"],  cameraResolutions["roiH"]);
         rawMatROI = rawImage(roi);
         

@@ -67,7 +67,7 @@ void CaptureThread::run()
 		//get frame
 		if(!pVideoCapture.capture())
 		{
-		        usleep(5000);
+		    usleep(5000);
 			WARNMSG(("Capture failed"));
 			DEBUGMSG(("."));
 			continue;
