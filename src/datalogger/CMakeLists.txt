@@ -26,7 +26,7 @@ INCLUDE_DIRECTORIES( ${Boost_INCLUDE_DIRS} )
 #-lboost_system -lboost_filesystem -lboost_date_time
 
 ADD_EXECUTABLE(datalogger datalogger)
-TARGET_LINK_LIBRARIES(datalogger utils yarp tracking2d ${Boost_LIBRARIES} -lboost_system -lboost_filesystem -lboost_date_time)
+TARGET_LINK_LIBRARIES(datalogger utils yarp tracking2d ${Boost_LIBRARIES} -lboost_system -lboost_filesystem -lboost_date_time -lpthread)
 
 install (TARGETS datalogger DESTINATION bin)
 

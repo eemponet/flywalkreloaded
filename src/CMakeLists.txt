@@ -32,5 +32,7 @@ ADD_SUBDIRECTORY( libs )
 ADD_SUBDIRECTORY( libs/imgproc )
 
 ADD_SUBDIRECTORY( datalogger )
+ADD_SUBDIRECTORY( oscsender )
+
 ADD_SUBDIRECTORY( flywalk )
 
